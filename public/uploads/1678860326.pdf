@@ -1,0 +1,330 @@
+        <!DOCTYPE html>
+    <html lang="en-US">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+                <title>Manage users</title>
+        <link href="/admin/assets/6bf5affb/themes/smoothness/jquery-ui.css" rel="stylesheet">
+<link href="/admin/assets/456fe36c/css/bootstrap.css" rel="stylesheet">
+<link href="/admin/css/site.css" rel="stylesheet">
+<link href="/admin/fancybox/source/jquery.fancybox.css" rel="stylesheet">
+<link href="/admin/css/image-uploader.css" rel="stylesheet">
+<link href="/admin/assets/fc3a3a13/css/font-awesome.min.css" rel="stylesheet">
+<link href="/admin/assets/bbf2da1/css/AdminLTE.min.css" rel="stylesheet">
+<link href="/admin/assets/bbf2da1/css/skins/skin-blue.min.css" rel="stylesheet">    </head>
+    <body class="skin-blue" >
+        <div class="wrapper">
+
+        <style>
+.skin-blue .main-header .logo{
+	
+	background-image: linear-gradient(to right, #ff5f6d, #ffc371) !important;
+}
+.skin-blue .main-header .navbar{
+	
+	background-image: linear-gradient(to right, #ff5f6d, #ffc371) !important;
+}
+
+</style>
+<header class="main-header">
+
+    <a class="logo" href="/admin/"><span class="logo-mini">APP</span><span class="logo-lg">Tools Management</span></a>
+    <nav class="navbar navbar-static-top" role="navigation">
+
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+
+        <div class="navbar-custom-menu">
+
+            <ul class="nav navbar-nav">
+
+             
+
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="/backend/web/uploads/mc.png" class="user-image" alt="User Image"/>
+                        <span class="hidden-xs text-capitalize">admin</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header">
+                            <img src="/admin/assets/bbf2da1/img/user2-160x160.jpg" class="img-circle"
+                                 alt="User Image"/>
+
+                            <p>
+                                <b class="text-capitalize"></b>
+                                <small>Welcome</small>
+                            </p>
+                        </li>
+                        <!-- Menu Body -->
+                        <!-- <li class="user-body">
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Followers</a>
+                            </div>
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Sales</a>
+                            </div>
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Friends</a>
+                            </div>
+                        </li> -->
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <div class="pull-left">
+                                <a class="btn btn-default btn-flat" href="/admin/user/9">Profile</a>                            </div>
+                            <div class="pull-right">
+                                                                <a class="btn btn-default btn-flat" href="/admin/user/logout" data-method="post">Sign out</a>                                    
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+               
+            </ul>
+        </div>
+    </nav>
+</header>
+
+        <style>
+.skin-blue .main-sidebar  	 {
+  
+    background-color: #8b0000 !important;
+}
+.main-sidebar{
+    background-color: #fff !important;
+}
+
+
+</style>
+<aside class="main-sidebar">
+
+    <section class="sidebar">
+
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="/backend/web/uploads/mc.png" class="img-circle" alt="User Image"/>
+            </div>
+            <div class="pull-left info">
+                <p class="text-capitalize"></p>
+
+                <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
+            </div>
+        </div>
+
+        <!-- search form -->
+        <!-- <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search..."/>
+              <span class="input-group-btn">
+                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+        </form> -->
+        <!-- /.search form -->
+        <ul class="sidebar-menu"><li class="treeview"><a href="/admin/users"><i class="fa fa-fa fa-users"></i>  <span>User Management</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+<ul class='treeview-menu' >
+<li><a href="/admin/users"><i class="fa fa-circle-o"></i>  <span>List Users</span></a></li>
+<li><a href="/admin/user/admin/create"><i class="fa fa-circle-o"></i>  <span>Create New User</span></a></li>
+</ul>
+</li>
+<li class="treeview"><a href="/admin/post/list?slug=logo"><i class="fa fa-fa fa-cubes"></i>  <span>Logo</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+<ul class='treeview-menu' >
+<li><a href="/admin/post/create?slug=logo"><i class="fa fa-circle-o"></i>  <span>Create</span></a></li>
+<li><a href="/admin/post/list?slug=logo"><i class="fa fa-circle-o"></i>  <span>List</span></a></li>
+</ul>
+</li>
+<li class="active treeview"><a href="/admin/member/member"><i class="fa fa-fa fa-cubes"></i>  <span>Empolypee</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+<ul class='treeview-menu' style='display: block'>
+<li><a href="/admin/member/create"><i class="fa fa-circle-o"></i>  <span>Create</span></a></li>
+<li class="active"><a href="/admin/member/index"><i class="fa fa-circle-o"></i>  <span>List</span></a></li>
+</ul>
+</li>
+<li class="treeview"><a href="/admin/sites/index"><i class="fa fa-fa fa-cubes"></i>  <span>Sites</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+<ul class='treeview-menu' >
+<li><a href="/admin/sites/create"><i class="fa fa-circle-o"></i>  <span>Create</span></a></li>
+<li><a href="/admin/sites/index"><i class="fa fa-circle-o"></i>  <span>List</span></a></li>
+</ul>
+</li>
+<li class="treeview"><a href="/admin/tools/index"><i class="fa fa-fa fa-cubes"></i>  <span>Tools</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+<ul class='treeview-menu' >
+<li><a href="/admin/tools/create"><i class="fa fa-circle-o"></i>  <span>Create</span></a></li>
+<li><a href="/admin/tools/index"><i class="fa fa-circle-o"></i>  <span>List</span></a></li>
+</ul>
+</li>
+<li class="treeview"><a href="/admin/moving-history/index"><i class="fa fa-fa fa-cubes"></i>  <span>Moving History</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+<ul class='treeview-menu' >
+<li><a href="/admin/moving-history/create"><i class="fa fa-circle-o"></i>  <span>Create</span></a></li>
+<li><a href="/admin/moving-history/index"><i class="fa fa-circle-o"></i>  <span>List</span></a></li>
+</ul>
+</li>
+<li class="treeview"><a href="/admin/repairment-history/index"><i class="fa fa-fa fa-cubes"></i>  <span>Repairment History</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+<ul class='treeview-menu' >
+<li><a href="/admin/repairment-history/create"><i class="fa fa-circle-o"></i>  <span>Create</span></a></li>
+<li><a href="/admin/repairment-history/index"><i class="fa fa-circle-o"></i>  <span>List</span></a></li>
+</ul>
+</li>
+<li class="treeview"><a href="/admin/"><i class="fa fa-fa fa-cubes"></i>  <span>Insurance</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+<ul class='treeview-menu' >
+<li class="treeview"><a href="/admin/employee-insurance/index"><i class="fa fa-fa fa-cubes"></i>  <span>Employee Insurance</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+<ul class='treeview-menu' >
+<li><a href="/admin/employee-insurance/create"><i class="fa fa-circle-o"></i>  <span>Create</span></a></li>
+<li><a href="/admin/employee-insurance/index"><i class="fa fa-circle-o"></i>  <span>List</span></a></li>
+</ul>
+</li>
+<li class="treeview"><a href="/admin/vehicle-insurance/index"><i class="fa fa-fa fa-cubes"></i>  <span>Vehicle Insurance</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+<ul class='treeview-menu' >
+<li><a href="/admin/vehicle-insurance/create"><i class="fa fa-circle-o"></i>  <span>Create</span></a></li>
+<li><a href="/admin/vehicle-insurance/index"><i class="fa fa-circle-o"></i>  <span>List</span></a></li>
+</ul>
+</li>
+<li class="treeview"><a href="/admin/wpc-insurance/index"><i class="fa fa-fa fa-cubes"></i>  <span>WPC Insurance</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+<ul class='treeview-menu' >
+<li><a href="/admin/wpc-insurance/create"><i class="fa fa-circle-o"></i>  <span>Create</span></a></li>
+<li><a href="/admin/wpc-insurance/index"><i class="fa fa-circle-o"></i>  <span>List</span></a></li>
+</ul>
+</li>
+<li class="treeview"><a href="/admin/car-policy/index"><i class="fa fa-fa fa-cubes"></i>  <span>Car Policy</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+<ul class='treeview-menu' >
+<li><a href="/admin/car-policy/create"><i class="fa fa-circle-o"></i>  <span>Create</span></a></li>
+<li><a href="/admin/car-policy/index"><i class="fa fa-circle-o"></i>  <span>List</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="treeview"><a href="/admin/project-report/index"><i class="fa fa-fa fa-cubes"></i>  <span>Project Report</span> <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+<ul class='treeview-menu' >
+<li><a href="/admin/project-report/create"><i class="fa fa-circle-o"></i>  <span>Create</span></a></li>
+<li><a href="/admin/project-report/index"><i class="fa fa-circle-o"></i>  <span>List</span></a></li>
+</ul>
+</li></ul>
+    </section>
+
+
+</aside>
+
+        <style>
+.skin-blue .content-header{
+background: linear-gradient(to right, #dc2430, #7b4397) !important;
+}
+
+.content{
+	background: linear-gradient(to right, #dc2430, #7b4397) !important;
+	
+}
+</style>
+<div class="content-wrapper">
+    <section class="content-header">
+                    <h1>
+                Manage users            </h1>
+        
+        <ul class="breadcrumb"><li><a href="/admin/">Home</a></li>
+<li class="active">Manage users</li>
+</ul>    </section>
+
+    <section class="content">
+                
+
+    <div class="row">
+        <div class="col-xs-12">
+                    </div>
+    </div>
+
+
+
+<div id="p0" data-pjax-container="" data-pjax-push-state data-pjax-timeout="1000"><div class="box box-primary">
+<div class="table-responsive">
+<div id="w0" class="grid-view"><table class="table table-striped table-bordered"><thead>
+<tr><th><a href="/admin/member/index?sort=name" data-sort="name">Name</a></th><th><a href="/admin/member/index?sort=username" data-sort="username">Username</a></th><th><a href="/admin/member/index?sort=phone_number" data-sort="phone_number">Phone Number</a></th><th><a href="/admin/member/index?sort=blood_group" data-sort="blood_group">Blood Group</a></th><th><a href="/admin/member/index?sort=email" data-sort="email">Email</a></th><th>Pay fee</th><th>View fee</th><th><a class="desc" href="/admin/member/index?sort=created_at" data-sort="created_at">Registration time</a></th><th>Confirmation</th><th>Block status</th><th class="action-column">&nbsp;</th></tr><tr id="w0-filters" class="filters"><td>&nbsp;</td><td><input type="text" class="form-control" name="UserSearch[username]"></td><td>&nbsp;</td><td>&nbsp;</td><td><input type="text" class="form-control" name="UserSearch[email]"></td><td>&nbsp;</td><td>&nbsp;</td><td><input type="text" id="usersearch-created_at" class="form-control" name="UserSearch[created_at]">
+</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</thead>
+<tbody>
+<tr data-key="224"><td><span class="not-set">(not set)</span></td><td>Shelbinpsabu</td><td><span class="not-set">(not set)</span></td><td><span class="not-set">(not set)</span></td><td><a href="mailto:shelbinpsabu@gmail.com">shelbinpsabu@gmail.com</a></td><td><a class=' btn btn-success' href='/admin/member/payfees?id=224'>Pay</a></td><td><a class=' btn btn-success' href='/admin/member/viewfees?id=224'>View fees</a></td><td>2023-01-09 12:44:32</td><td><div class="text-center"><span class="text-success">Confirmed</span></div></td><td><a class="btn btn-xs btn-danger btn-block" href="/admin/member/block?id=224" data-method="post" data-confirm="Are you sure you want to block this user?">Block</a></td><td><a href="/admin/member/view?id=224" title="View" aria-label="View" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1.125em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M573 241C518 136 411 64 288 64S58 136 3 241a32 32 0 000 30c55 105 162 177 285 177s230-72 285-177a32 32 0 000-30zM288 400a144 144 0 11144-144 144 144 0 01-144 144zm0-240a95 95 0 00-25 4 48 48 0 01-67 67 96 96 0 1092-71z"/></svg></a> <a href="/admin/member/update?id=224" title="Update" aria-label="Update" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M498 142l-46 46c-5 5-13 5-17 0L324 77c-5-5-5-12 0-17l46-46c19-19 49-19 68 0l60 60c19 19 19 49 0 68zm-214-42L22 362 0 484c-3 16 12 30 28 28l122-22 262-262c5-5 5-13 0-17L301 100c-4-5-12-5-17 0zM124 340c-5-6-5-14 0-20l154-154c6-5 14-5 20 0s5 14 0 20L144 340c-6 5-14 5-20 0zm-36 84h48v36l-64 12-32-31 12-65h36v48z"/></svg></a> <a href="/admin/member/delete?id=224" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:.875em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0048 48h288a48 48 0 0048-48V128H32zm272-256a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zM432 32H312l-9-19a24 24 0 00-22-13H167a24 24 0 00-22 13l-9 19H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16z"/></svg></a></td></tr>
+<tr data-key="223"><td>admin</td><td>1066301</td><td>1013452</td><td><span class="not-set">(not set)</span></td><td><a href="mailto:1083161@hydrotech.com">1083161@hydrotech.com</a></td><td><a class=' btn btn-success' href='/admin/member/payfees?id=223'>Pay</a></td><td><a class=' btn btn-success' href='/admin/member/viewfees?id=223'>View fees</a></td><td>2023-01-07 8:53:02</td><td><div class="text-center"><span class="text-success">Confirmed</span></div></td><td><a class="btn btn-xs btn-danger btn-block" href="/admin/member/block?id=223" data-method="post" data-confirm="Are you sure you want to block this user?">Block</a></td><td><a href="/admin/member/view?id=223" title="View" aria-label="View" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1.125em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M573 241C518 136 411 64 288 64S58 136 3 241a32 32 0 000 30c55 105 162 177 285 177s230-72 285-177a32 32 0 000-30zM288 400a144 144 0 11144-144 144 144 0 01-144 144zm0-240a95 95 0 00-25 4 48 48 0 01-67 67 96 96 0 1092-71z"/></svg></a> <a href="/admin/member/update?id=223" title="Update" aria-label="Update" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M498 142l-46 46c-5 5-13 5-17 0L324 77c-5-5-5-12 0-17l46-46c19-19 49-19 68 0l60 60c19 19 19 49 0 68zm-214-42L22 362 0 484c-3 16 12 30 28 28l122-22 262-262c5-5 5-13 0-17L301 100c-4-5-12-5-17 0zM124 340c-5-6-5-14 0-20l154-154c6-5 14-5 20 0s5 14 0 20L144 340c-6 5-14 5-20 0zm-36 84h48v36l-64 12-32-31 12-65h36v48z"/></svg></a> <a href="/admin/member/delete?id=223" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:.875em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0048 48h288a48 48 0 0048-48V128H32zm272-256a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zM432 32H312l-9-19a24 24 0 00-22-13H167a24 24 0 00-22 13l-9 19H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16z"/></svg></a></td></tr>
+<tr data-key="222"><td>SHEENU S </td><td>1071308</td><td>9846200071</td><td><span class="not-set">(not set)</span></td><td><a href="mailto:acctstravancorehydrotechpvtltd@gmail.com">acctstravancorehydrotechpvtltd@gmail.com</a></td><td><a class=' btn btn-success' href='/admin/member/payfees?id=222'>Pay</a></td><td><a class=' btn btn-success' href='/admin/member/viewfees?id=222'>View fees</a></td><td>2023-01-06 10:14:48</td><td><div class="text-center"><span class="text-success">Confirmed</span></div></td><td><a class="btn btn-xs btn-danger btn-block" href="/admin/member/block?id=222" data-method="post" data-confirm="Are you sure you want to block this user?">Block</a></td><td><a href="/admin/member/view?id=222" title="View" aria-label="View" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1.125em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M573 241C518 136 411 64 288 64S58 136 3 241a32 32 0 000 30c55 105 162 177 285 177s230-72 285-177a32 32 0 000-30zM288 400a144 144 0 11144-144 144 144 0 01-144 144zm0-240a95 95 0 00-25 4 48 48 0 01-67 67 96 96 0 1092-71z"/></svg></a> <a href="/admin/member/update?id=222" title="Update" aria-label="Update" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M498 142l-46 46c-5 5-13 5-17 0L324 77c-5-5-5-12 0-17l46-46c19-19 49-19 68 0l60 60c19 19 19 49 0 68zm-214-42L22 362 0 484c-3 16 12 30 28 28l122-22 262-262c5-5 5-13 0-17L301 100c-4-5-12-5-17 0zM124 340c-5-6-5-14 0-20l154-154c6-5 14-5 20 0s5 14 0 20L144 340c-6 5-14 5-20 0zm-36 84h48v36l-64 12-32-31 12-65h36v48z"/></svg></a> <a href="/admin/member/delete?id=222" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:.875em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0048 48h288a48 48 0 0048-48V128H32zm272-256a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zM432 32H312l-9-19a24 24 0 00-22-13H167a24 24 0 00-22 13l-9 19H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16z"/></svg></a></td></tr>
+<tr data-key="220"><td>anusithra</td><td>anusithra</td><td>1000279</td><td><span class="not-set">(not set)</span></td><td><a href="mailto:1036238@hydrotech.com">1036238@hydrotech.com</a></td><td><a class=' btn btn-success' href='/admin/member/payfees?id=220'>Pay</a></td><td><a class=' btn btn-success' href='/admin/member/viewfees?id=220'>View fees</a></td><td>2023-01-04 4:35:11</td><td><div class="text-center"><span class="text-success">Confirmed</span></div></td><td><a class="btn btn-xs btn-danger btn-block" href="/admin/member/block?id=220" data-method="post" data-confirm="Are you sure you want to block this user?">Block</a></td><td><a href="/admin/member/view?id=220" title="View" aria-label="View" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1.125em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M573 241C518 136 411 64 288 64S58 136 3 241a32 32 0 000 30c55 105 162 177 285 177s230-72 285-177a32 32 0 000-30zM288 400a144 144 0 11144-144 144 144 0 01-144 144zm0-240a95 95 0 00-25 4 48 48 0 01-67 67 96 96 0 1092-71z"/></svg></a> <a href="/admin/member/update?id=220" title="Update" aria-label="Update" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M498 142l-46 46c-5 5-13 5-17 0L324 77c-5-5-5-12 0-17l46-46c19-19 49-19 68 0l60 60c19 19 19 49 0 68zm-214-42L22 362 0 484c-3 16 12 30 28 28l122-22 262-262c5-5 5-13 0-17L301 100c-4-5-12-5-17 0zM124 340c-5-6-5-14 0-20l154-154c6-5 14-5 20 0s5 14 0 20L144 340c-6 5-14 5-20 0zm-36 84h48v36l-64 12-32-31 12-65h36v48z"/></svg></a> <a href="/admin/member/delete?id=220" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:.875em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0048 48h288a48 48 0 0048-48V128H32zm272-256a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zM432 32H312l-9-19a24 24 0 00-22-13H167a24 24 0 00-22 13l-9 19H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16z"/></svg></a></td></tr>
+<tr data-key="219"><td>MANEESH MOHAN NAIR </td><td>MANEESH</td><td>9847037431</td><td><span class="not-set">(not set)</span></td><td><a href="mailto:1008570@hydrotech.com">1008570@hydrotech.com</a></td><td><a class=' btn btn-success' href='/admin/member/payfees?id=219'>Pay</a></td><td><a class=' btn btn-success' href='/admin/member/viewfees?id=219'>View fees</a></td><td>2022-12-28 11:43:13</td><td><div class="text-center"><span class="text-success">Confirmed</span></div></td><td><a class="btn btn-xs btn-danger btn-block" href="/admin/member/block?id=219" data-method="post" data-confirm="Are you sure you want to block this user?">Block</a></td><td><a href="/admin/member/view?id=219" title="View" aria-label="View" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1.125em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M573 241C518 136 411 64 288 64S58 136 3 241a32 32 0 000 30c55 105 162 177 285 177s230-72 285-177a32 32 0 000-30zM288 400a144 144 0 11144-144 144 144 0 01-144 144zm0-240a95 95 0 00-25 4 48 48 0 01-67 67 96 96 0 1092-71z"/></svg></a> <a href="/admin/member/update?id=219" title="Update" aria-label="Update" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M498 142l-46 46c-5 5-13 5-17 0L324 77c-5-5-5-12 0-17l46-46c19-19 49-19 68 0l60 60c19 19 19 49 0 68zm-214-42L22 362 0 484c-3 16 12 30 28 28l122-22 262-262c5-5 5-13 0-17L301 100c-4-5-12-5-17 0zM124 340c-5-6-5-14 0-20l154-154c6-5 14-5 20 0s5 14 0 20L144 340c-6 5-14 5-20 0zm-36 84h48v36l-64 12-32-31 12-65h36v48z"/></svg></a> <a href="/admin/member/delete?id=219" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:.875em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0048 48h288a48 48 0 0048-48V128H32zm272-256a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zM432 32H312l-9-19a24 24 0 00-22-13H167a24 24 0 00-22 13l-9 19H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16z"/></svg></a></td></tr>
+<tr data-key="218"><td>MANOJ KUMAR C</td><td>MANOJ</td><td>9995485419</td><td><span class="not-set">(not set)</span></td><td><a href="mailto:1198981@hydrotech.com">1198981@hydrotech.com</a></td><td><a class=' btn btn-success' href='/admin/member/payfees?id=218'>Pay</a></td><td><a class=' btn btn-success' href='/admin/member/viewfees?id=218'>View fees</a></td><td>2022-12-28 11:41:54</td><td><div class="text-center"><span class="text-success">Confirmed</span></div></td><td><a class="btn btn-xs btn-danger btn-block" href="/admin/member/block?id=218" data-method="post" data-confirm="Are you sure you want to block this user?">Block</a></td><td><a href="/admin/member/view?id=218" title="View" aria-label="View" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1.125em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M573 241C518 136 411 64 288 64S58 136 3 241a32 32 0 000 30c55 105 162 177 285 177s230-72 285-177a32 32 0 000-30zM288 400a144 144 0 11144-144 144 144 0 01-144 144zm0-240a95 95 0 00-25 4 48 48 0 01-67 67 96 96 0 1092-71z"/></svg></a> <a href="/admin/member/update?id=218" title="Update" aria-label="Update" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M498 142l-46 46c-5 5-13 5-17 0L324 77c-5-5-5-12 0-17l46-46c19-19 49-19 68 0l60 60c19 19 19 49 0 68zm-214-42L22 362 0 484c-3 16 12 30 28 28l122-22 262-262c5-5 5-13 0-17L301 100c-4-5-12-5-17 0zM124 340c-5-6-5-14 0-20l154-154c6-5 14-5 20 0s5 14 0 20L144 340c-6 5-14 5-20 0zm-36 84h48v36l-64 12-32-31 12-65h36v48z"/></svg></a> <a href="/admin/member/delete?id=218" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:.875em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0048 48h288a48 48 0 0048-48V128H32zm272-256a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zM432 32H312l-9-19a24 24 0 00-22-13H167a24 24 0 00-22 13l-9 19H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16z"/></svg></a></td></tr>
+<tr data-key="217"><td>RAMESAN</td><td>RAMESAN</td><td>9995802415</td><td><span class="not-set">(not set)</span></td><td><a href="mailto:orderspasco@gmail.com">orderspasco@gmail.com</a></td><td><a class=' btn btn-success' href='/admin/member/payfees?id=217'>Pay</a></td><td><a class=' btn btn-success' href='/admin/member/viewfees?id=217'>View fees</a></td><td>2022-12-28 11:39:53</td><td><div class="text-center"><span class="text-success">Confirmed</span></div></td><td><a class="btn btn-xs btn-danger btn-block" href="/admin/member/block?id=217" data-method="post" data-confirm="Are you sure you want to block this user?">Block</a></td><td><a href="/admin/member/view?id=217" title="View" aria-label="View" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1.125em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M573 241C518 136 411 64 288 64S58 136 3 241a32 32 0 000 30c55 105 162 177 285 177s230-72 285-177a32 32 0 000-30zM288 400a144 144 0 11144-144 144 144 0 01-144 144zm0-240a95 95 0 00-25 4 48 48 0 01-67 67 96 96 0 1092-71z"/></svg></a> <a href="/admin/member/update?id=217" title="Update" aria-label="Update" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M498 142l-46 46c-5 5-13 5-17 0L324 77c-5-5-5-12 0-17l46-46c19-19 49-19 68 0l60 60c19 19 19 49 0 68zm-214-42L22 362 0 484c-3 16 12 30 28 28l122-22 262-262c5-5 5-13 0-17L301 100c-4-5-12-5-17 0zM124 340c-5-6-5-14 0-20l154-154c6-5 14-5 20 0s5 14 0 20L144 340c-6 5-14 5-20 0zm-36 84h48v36l-64 12-32-31 12-65h36v48z"/></svg></a> <a href="/admin/member/delete?id=217" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:.875em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0048 48h288a48 48 0 0048-48V128H32zm272-256a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zM432 32H312l-9-19a24 24 0 00-22-13H167a24 24 0 00-22 13l-9 19H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16z"/></svg></a></td></tr>
+<tr data-key="216"><td>CHITRA MS</td><td>CHITRA</td><td>9995802419</td><td><span class="not-set">(not set)</span></td><td><a href="mailto:internalmails2022@gmail.com">internalmails2022@gmail.com</a></td><td><a class=' btn btn-success' href='/admin/member/payfees?id=216'>Pay</a></td><td><a class=' btn btn-success' href='/admin/member/viewfees?id=216'>View fees</a></td><td>2022-12-28 11:34:42</td><td><div class="text-center"><span class="text-success">Confirmed</span></div></td><td><a class="btn btn-xs btn-danger btn-block" href="/admin/member/block?id=216" data-method="post" data-confirm="Are you sure you want to block this user?">Block</a></td><td><a href="/admin/member/view?id=216" title="View" aria-label="View" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1.125em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M573 241C518 136 411 64 288 64S58 136 3 241a32 32 0 000 30c55 105 162 177 285 177s230-72 285-177a32 32 0 000-30zM288 400a144 144 0 11144-144 144 144 0 01-144 144zm0-240a95 95 0 00-25 4 48 48 0 01-67 67 96 96 0 1092-71z"/></svg></a> <a href="/admin/member/update?id=216" title="Update" aria-label="Update" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M498 142l-46 46c-5 5-13 5-17 0L324 77c-5-5-5-12 0-17l46-46c19-19 49-19 68 0l60 60c19 19 19 49 0 68zm-214-42L22 362 0 484c-3 16 12 30 28 28l122-22 262-262c5-5 5-13 0-17L301 100c-4-5-12-5-17 0zM124 340c-5-6-5-14 0-20l154-154c6-5 14-5 20 0s5 14 0 20L144 340c-6 5-14 5-20 0zm-36 84h48v36l-64 12-32-31 12-65h36v48z"/></svg></a> <a href="/admin/member/delete?id=216" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:.875em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0048 48h288a48 48 0 0048-48V128H32zm272-256a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zM432 32H312l-9-19a24 24 0 00-22-13H167a24 24 0 00-22 13l-9 19H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16z"/></svg></a></td></tr>
+<tr data-key="215"><td>SHINOY MATHEW</td><td>SHINOY</td><td>8606871386</td><td><span class="not-set">(not set)</span></td><td><a href="mailto:1073649@hydrotech.com">1073649@hydrotech.com</a></td><td><a class=' btn btn-success' href='/admin/member/payfees?id=215'>Pay</a></td><td><a class=' btn btn-success' href='/admin/member/viewfees?id=215'>View fees</a></td><td>2022-12-28 11:26:28</td><td><div class="text-center"><span class="text-success">Confirmed</span></div></td><td><a class="btn btn-xs btn-danger btn-block" href="/admin/member/block?id=215" data-method="post" data-confirm="Are you sure you want to block this user?">Block</a></td><td><a href="/admin/member/view?id=215" title="View" aria-label="View" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1.125em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M573 241C518 136 411 64 288 64S58 136 3 241a32 32 0 000 30c55 105 162 177 285 177s230-72 285-177a32 32 0 000-30zM288 400a144 144 0 11144-144 144 144 0 01-144 144zm0-240a95 95 0 00-25 4 48 48 0 01-67 67 96 96 0 1092-71z"/></svg></a> <a href="/admin/member/update?id=215" title="Update" aria-label="Update" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M498 142l-46 46c-5 5-13 5-17 0L324 77c-5-5-5-12 0-17l46-46c19-19 49-19 68 0l60 60c19 19 19 49 0 68zm-214-42L22 362 0 484c-3 16 12 30 28 28l122-22 262-262c5-5 5-13 0-17L301 100c-4-5-12-5-17 0zM124 340c-5-6-5-14 0-20l154-154c6-5 14-5 20 0s5 14 0 20L144 340c-6 5-14 5-20 0zm-36 84h48v36l-64 12-32-31 12-65h36v48z"/></svg></a> <a href="/admin/member/delete?id=215" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:.875em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0048 48h288a48 48 0 0048-48V128H32zm272-256a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zM432 32H312l-9-19a24 24 0 00-22-13H167a24 24 0 00-22 13l-9 19H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16z"/></svg></a></td></tr>
+<tr data-key="214"><td>RATHEESH UNNIKRISHNAN</td><td>RATHEESH</td><td>8075465299</td><td><span class="not-set">(not set)</span></td><td><a href="mailto:1181926@hydrotech.com">1181926@hydrotech.com</a></td><td><a class=' btn btn-success' href='/admin/member/payfees?id=214'>Pay</a></td><td><a class=' btn btn-success' href='/admin/member/viewfees?id=214'>View fees</a></td><td>2022-12-28 11:22:46</td><td><div class="text-center"><span class="text-success">Confirmed</span></div></td><td><a class="btn btn-xs btn-danger btn-block" href="/admin/member/block?id=214" data-method="post" data-confirm="Are you sure you want to block this user?">Block</a></td><td><a href="/admin/member/view?id=214" title="View" aria-label="View" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1.125em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M573 241C518 136 411 64 288 64S58 136 3 241a32 32 0 000 30c55 105 162 177 285 177s230-72 285-177a32 32 0 000-30zM288 400a144 144 0 11144-144 144 144 0 01-144 144zm0-240a95 95 0 00-25 4 48 48 0 01-67 67 96 96 0 1092-71z"/></svg></a> <a href="/admin/member/update?id=214" title="Update" aria-label="Update" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M498 142l-46 46c-5 5-13 5-17 0L324 77c-5-5-5-12 0-17l46-46c19-19 49-19 68 0l60 60c19 19 19 49 0 68zm-214-42L22 362 0 484c-3 16 12 30 28 28l122-22 262-262c5-5 5-13 0-17L301 100c-4-5-12-5-17 0zM124 340c-5-6-5-14 0-20l154-154c6-5 14-5 20 0s5 14 0 20L144 340c-6 5-14 5-20 0zm-36 84h48v36l-64 12-32-31 12-65h36v48z"/></svg></a> <a href="/admin/member/delete?id=214" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:.875em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0048 48h288a48 48 0 0048-48V128H32zm272-256a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zM432 32H312l-9-19a24 24 0 00-22-13H167a24 24 0 00-22 13l-9 19H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16z"/></svg></a></td></tr>
+<tr data-key="213"><td>GIREESH KUMAR PS</td><td>GIREESH</td><td>9995802412</td><td><span class="not-set">(not set)</span></td><td><a href="mailto:1014975@hydrotech.com">1014975@hydrotech.com</a></td><td><a class=' btn btn-success' href='/admin/member/payfees?id=213'>Pay</a></td><td><a class=' btn btn-success' href='/admin/member/viewfees?id=213'>View fees</a></td><td>2022-12-28 11:20:05</td><td><div class="text-center"><span class="text-success">Confirmed</span></div></td><td><a class="btn btn-xs btn-danger btn-block" href="/admin/member/block?id=213" data-method="post" data-confirm="Are you sure you want to block this user?">Block</a></td><td><a href="/admin/member/view?id=213" title="View" aria-label="View" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1.125em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M573 241C518 136 411 64 288 64S58 136 3 241a32 32 0 000 30c55 105 162 177 285 177s230-72 285-177a32 32 0 000-30zM288 400a144 144 0 11144-144 144 144 0 01-144 144zm0-240a95 95 0 00-25 4 48 48 0 01-67 67 96 96 0 1092-71z"/></svg></a> <a href="/admin/member/update?id=213" title="Update" aria-label="Update" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M498 142l-46 46c-5 5-13 5-17 0L324 77c-5-5-5-12 0-17l46-46c19-19 49-19 68 0l60 60c19 19 19 49 0 68zm-214-42L22 362 0 484c-3 16 12 30 28 28l122-22 262-262c5-5 5-13 0-17L301 100c-4-5-12-5-17 0zM124 340c-5-6-5-14 0-20l154-154c6-5 14-5 20 0s5 14 0 20L144 340c-6 5-14 5-20 0zm-36 84h48v36l-64 12-32-31 12-65h36v48z"/></svg></a> <a href="/admin/member/delete?id=213" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:.875em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0048 48h288a48 48 0 0048-48V128H32zm272-256a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zM432 32H312l-9-19a24 24 0 00-22-13H167a24 24 0 00-22 13l-9 19H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16z"/></svg></a></td></tr>
+<tr data-key="212"><td>NIYAZ JAMALUDHIN</td><td>NIYAZ</td><td>8606611191</td><td><span class="not-set">(not set)</span></td><td><a href="mailto:niyaz.kmpce@gmail.com">niyaz.kmpce@gmail.com</a></td><td><a class=' btn btn-success' href='/admin/member/payfees?id=212'>Pay</a></td><td><a class=' btn btn-success' href='/admin/member/viewfees?id=212'>View fees</a></td><td>2022-12-28 11:16:38</td><td><div class="text-center"><span class="text-success">Confirmed</span></div></td><td><a class="btn btn-xs btn-danger btn-block" href="/admin/member/block?id=212" data-method="post" data-confirm="Are you sure you want to block this user?">Block</a></td><td><a href="/admin/member/view?id=212" title="View" aria-label="View" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1.125em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M573 241C518 136 411 64 288 64S58 136 3 241a32 32 0 000 30c55 105 162 177 285 177s230-72 285-177a32 32 0 000-30zM288 400a144 144 0 11144-144 144 144 0 01-144 144zm0-240a95 95 0 00-25 4 48 48 0 01-67 67 96 96 0 1092-71z"/></svg></a> <a href="/admin/member/update?id=212" title="Update" aria-label="Update" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M498 142l-46 46c-5 5-13 5-17 0L324 77c-5-5-5-12 0-17l46-46c19-19 49-19 68 0l60 60c19 19 19 49 0 68zm-214-42L22 362 0 484c-3 16 12 30 28 28l122-22 262-262c5-5 5-13 0-17L301 100c-4-5-12-5-17 0zM124 340c-5-6-5-14 0-20l154-154c6-5 14-5 20 0s5 14 0 20L144 340c-6 5-14 5-20 0zm-36 84h48v36l-64 12-32-31 12-65h36v48z"/></svg></a> <a href="/admin/member/delete?id=212" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:.875em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0048 48h288a48 48 0 0048-48V128H32zm272-256a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zM432 32H312l-9-19a24 24 0 00-22-13H167a24 24 0 00-22 13l-9 19H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16z"/></svg></a></td></tr>
+<tr data-key="211"><td>SHANAWAS KHAN</td><td>SHANAWAS</td><td>9995802411</td><td><span class="not-set">(not set)</span></td><td><a href="mailto:shanavasayanimood@gmail.com">shanavasayanimood@gmail.com</a></td><td><a class=' btn btn-success' href='/admin/member/payfees?id=211'>Pay</a></td><td><a class=' btn btn-success' href='/admin/member/viewfees?id=211'>View fees</a></td><td>2022-12-28 11:14:11</td><td><div class="text-center"><span class="text-success">Confirmed</span></div></td><td><a class="btn btn-xs btn-danger btn-block" href="/admin/member/block?id=211" data-method="post" data-confirm="Are you sure you want to block this user?">Block</a></td><td><a href="/admin/member/view?id=211" title="View" aria-label="View" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1.125em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M573 241C518 136 411 64 288 64S58 136 3 241a32 32 0 000 30c55 105 162 177 285 177s230-72 285-177a32 32 0 000-30zM288 400a144 144 0 11144-144 144 144 0 01-144 144zm0-240a95 95 0 00-25 4 48 48 0 01-67 67 96 96 0 1092-71z"/></svg></a> <a href="/admin/member/update?id=211" title="Update" aria-label="Update" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M498 142l-46 46c-5 5-13 5-17 0L324 77c-5-5-5-12 0-17l46-46c19-19 49-19 68 0l60 60c19 19 19 49 0 68zm-214-42L22 362 0 484c-3 16 12 30 28 28l122-22 262-262c5-5 5-13 0-17L301 100c-4-5-12-5-17 0zM124 340c-5-6-5-14 0-20l154-154c6-5 14-5 20 0s5 14 0 20L144 340c-6 5-14 5-20 0zm-36 84h48v36l-64 12-32-31 12-65h36v48z"/></svg></a> <a href="/admin/member/delete?id=211" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:.875em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0048 48h288a48 48 0 0048-48V128H32zm272-256a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zM432 32H312l-9-19a24 24 0 00-22-13H167a24 24 0 00-22 13l-9 19H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16z"/></svg></a></td></tr>
+<tr data-key="192"><td>SHELBIN P</td><td>SHELBIN</td><td>7907977914</td><td><span class="not-set">(not set)</span></td><td><a href="mailto:shelbinpazhayattu@gmail.com">shelbinpazhayattu@gmail.com</a></td><td><a class=' btn btn-success' href='/admin/member/payfees?id=192'>Pay</a></td><td><a class=' btn btn-success' href='/admin/member/viewfees?id=192'>View fees</a></td><td>2022-10-07 11:27:54</td><td><div class="text-center"><span class="text-success">Confirmed</span></div></td><td><a class="btn btn-xs btn-danger btn-block" href="/admin/member/block?id=192" data-method="post" data-confirm="Are you sure you want to block this user?">Block</a></td><td><a href="/admin/member/view?id=192" title="View" aria-label="View" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1.125em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M573 241C518 136 411 64 288 64S58 136 3 241a32 32 0 000 30c55 105 162 177 285 177s230-72 285-177a32 32 0 000-30zM288 400a144 144 0 11144-144 144 144 0 01-144 144zm0-240a95 95 0 00-25 4 48 48 0 01-67 67 96 96 0 1092-71z"/></svg></a> <a href="/admin/member/update?id=192" title="Update" aria-label="Update" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M498 142l-46 46c-5 5-13 5-17 0L324 77c-5-5-5-12 0-17l46-46c19-19 49-19 68 0l60 60c19 19 19 49 0 68zm-214-42L22 362 0 484c-3 16 12 30 28 28l122-22 262-262c5-5 5-13 0-17L301 100c-4-5-12-5-17 0zM124 340c-5-6-5-14 0-20l154-154c6-5 14-5 20 0s5 14 0 20L144 340c-6 5-14 5-20 0zm-36 84h48v36l-64 12-32-31 12-65h36v48z"/></svg></a> <a href="/admin/member/delete?id=192" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:.875em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0048 48h288a48 48 0 0048-48V128H32zm272-256a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zM432 32H312l-9-19a24 24 0 00-22-13H167a24 24 0 00-22 13l-9 19H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16z"/></svg></a></td></tr>
+<tr data-key="191"><td>THOMAS JOSEPH</td><td>THOMASJOSEPH</td><td>9497219525</td><td><span class="not-set">(not set)</span></td><td><a href="mailto:lijo9525@gmail.com">lijo9525@gmail.com</a></td><td><a class=' btn btn-success' href='/admin/member/payfees?id=191'>Pay</a></td><td><a class=' btn btn-success' href='/admin/member/viewfees?id=191'>View fees</a></td><td>2022-10-07 11:27:18</td><td><div class="text-center"><span class="text-success">Confirmed</span></div></td><td><a class="btn btn-xs btn-danger btn-block" href="/admin/member/block?id=191" data-method="post" data-confirm="Are you sure you want to block this user?">Block</a></td><td><a href="/admin/member/view?id=191" title="View" aria-label="View" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1.125em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M573 241C518 136 411 64 288 64S58 136 3 241a32 32 0 000 30c55 105 162 177 285 177s230-72 285-177a32 32 0 000-30zM288 400a144 144 0 11144-144 144 144 0 01-144 144zm0-240a95 95 0 00-25 4 48 48 0 01-67 67 96 96 0 1092-71z"/></svg></a> <a href="/admin/member/update?id=191" title="Update" aria-label="Update" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M498 142l-46 46c-5 5-13 5-17 0L324 77c-5-5-5-12 0-17l46-46c19-19 49-19 68 0l60 60c19 19 19 49 0 68zm-214-42L22 362 0 484c-3 16 12 30 28 28l122-22 262-262c5-5 5-13 0-17L301 100c-4-5-12-5-17 0zM124 340c-5-6-5-14 0-20l154-154c6-5 14-5 20 0s5 14 0 20L144 340c-6 5-14 5-20 0zm-36 84h48v36l-64 12-32-31 12-65h36v48z"/></svg></a> <a href="/admin/member/delete?id=191" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:.875em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0048 48h288a48 48 0 0048-48V128H32zm272-256a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zM432 32H312l-9-19a24 24 0 00-22-13H167a24 24 0 00-22 13l-9 19H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16z"/></svg></a></td></tr>
+<tr data-key="190"><td>PRASANNAN B NAIR</td><td>PRASANNANBNAIR</td><td>71564405324</td><td><span class="not-set">(not set)</span></td><td><a href="mailto:prasannanbnair@gmail.com">prasannanbnair@gmail.com</a></td><td><a class=' btn btn-success' href='/admin/member/payfees?id=190'>Pay</a></td><td><a class=' btn btn-success' href='/admin/member/viewfees?id=190'>View fees</a></td><td>2022-10-05 13:22:41</td><td><div class="text-center"><span class="text-success">Confirmed</span></div></td><td><a class="btn btn-xs btn-danger btn-block" href="/admin/member/block?id=190" data-method="post" data-confirm="Are you sure you want to block this user?">Block</a></td><td><a href="/admin/member/view?id=190" title="View" aria-label="View" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1.125em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M573 241C518 136 411 64 288 64S58 136 3 241a32 32 0 000 30c55 105 162 177 285 177s230-72 285-177a32 32 0 000-30zM288 400a144 144 0 11144-144 144 144 0 01-144 144zm0-240a95 95 0 00-25 4 48 48 0 01-67 67 96 96 0 1092-71z"/></svg></a> <a href="/admin/member/update?id=190" title="Update" aria-label="Update" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M498 142l-46 46c-5 5-13 5-17 0L324 77c-5-5-5-12 0-17l46-46c19-19 49-19 68 0l60 60c19 19 19 49 0 68zm-214-42L22 362 0 484c-3 16 12 30 28 28l122-22 262-262c5-5 5-13 0-17L301 100c-4-5-12-5-17 0zM124 340c-5-6-5-14 0-20l154-154c6-5 14-5 20 0s5 14 0 20L144 340c-6 5-14 5-20 0zm-36 84h48v36l-64 12-32-31 12-65h36v48z"/></svg></a> <a href="/admin/member/delete?id=190" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:.875em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0048 48h288a48 48 0 0048-48V128H32zm272-256a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zM432 32H312l-9-19a24 24 0 00-22-13H167a24 24 0 00-22 13l-9 19H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16z"/></svg></a></td></tr>
+<tr data-key="175"><td>VINOD CG</td><td>VINOD</td><td>7561811204</td><td></td><td><a href="mailto:spntrprss@gmail.com">spntrprss@gmail.com</a></td><td><a class=' btn btn-success' href='/admin/member/payfees?id=175'>Pay</a></td><td><a class=' btn btn-success' href='/admin/member/viewfees?id=175'>View fees</a></td><td>2022-09-16 12:02:10</td><td><div class="text-center"><span class="text-success">Confirmed</span></div></td><td><a class="btn btn-xs btn-danger btn-block" href="/admin/member/block?id=175" data-method="post" data-confirm="Are you sure you want to block this user?">Block</a></td><td><a href="/admin/member/view?id=175" title="View" aria-label="View" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1.125em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M573 241C518 136 411 64 288 64S58 136 3 241a32 32 0 000 30c55 105 162 177 285 177s230-72 285-177a32 32 0 000-30zM288 400a144 144 0 11144-144 144 144 0 01-144 144zm0-240a95 95 0 00-25 4 48 48 0 01-67 67 96 96 0 1092-71z"/></svg></a> <a href="/admin/member/update?id=175" title="Update" aria-label="Update" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M498 142l-46 46c-5 5-13 5-17 0L324 77c-5-5-5-12 0-17l46-46c19-19 49-19 68 0l60 60c19 19 19 49 0 68zm-214-42L22 362 0 484c-3 16 12 30 28 28l122-22 262-262c5-5 5-13 0-17L301 100c-4-5-12-5-17 0zM124 340c-5-6-5-14 0-20l154-154c6-5 14-5 20 0s5 14 0 20L144 340c-6 5-14 5-20 0zm-36 84h48v36l-64 12-32-31 12-65h36v48z"/></svg></a> <a href="/admin/member/delete?id=175" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:.875em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0048 48h288a48 48 0 0048-48V128H32zm272-256a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zM432 32H312l-9-19a24 24 0 00-22-13H167a24 24 0 00-22 13l-9 19H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16z"/></svg></a></td></tr>
+<tr data-key="9"><td>admin</td><td>admin</td><td>9562401595</td><td></td><td><a href="mailto: shapeup.in@gmail.com"> shapeup.in@gmail.com</a></td><td><a class=' btn btn-success' href='/admin/member/payfees?id=9'>Pay</a></td><td><a class=' btn btn-success' href='/admin/member/viewfees?id=9'>View fees</a></td><td>2016-04-13 13:48:47</td><td><div class="text-center"><span class="text-success">Confirmed</span></div></td><td><a class="btn btn-xs btn-danger btn-block" href="/admin/member/block?id=9" data-method="post" data-confirm="Are you sure you want to block this user?">Block</a></td><td><a href="/admin/member/view?id=9" title="View" aria-label="View" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1.125em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M573 241C518 136 411 64 288 64S58 136 3 241a32 32 0 000 30c55 105 162 177 285 177s230-72 285-177a32 32 0 000-30zM288 400a144 144 0 11144-144 144 144 0 01-144 144zm0-240a95 95 0 00-25 4 48 48 0 01-67 67 96 96 0 1092-71z"/></svg></a> <a href="/admin/member/update?id=9" title="Update" aria-label="Update" data-pjax="0"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M498 142l-46 46c-5 5-13 5-17 0L324 77c-5-5-5-12 0-17l46-46c19-19 49-19 68 0l60 60c19 19 19 49 0 68zm-214-42L22 362 0 484c-3 16 12 30 28 28l122-22 262-262c5-5 5-13 0-17L301 100c-4-5-12-5-17 0zM124 340c-5-6-5-14 0-20l154-154c6-5 14-5 20 0s5 14 0 20L144 340c-6 5-14 5-20 0zm-36 84h48v36l-64 12-32-31 12-65h36v48z"/></svg></a> <a href="/admin/member/delete?id=9" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><svg aria-hidden="true" style="display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em;width:.875em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0048 48h288a48 48 0 0048-48V128H32zm272-256a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zM432 32H312l-9-19a24 24 0 00-22-13H167a24 24 0 00-22 13l-9 19H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16z"/></svg></a></td></tr>
+</tbody></table>
+</div></div>
+</div>
+</div>    </section>
+</div>
+
+<footer class="main-footer">
+    <div class="pull-right hidden-xs">
+        <b>Version</b> 2.0
+    </div>
+    <strong>Copyright &copy; 2023-2024 <a href="http://www.mctreecreations.com/">Mctree Creations</a>.</strong> All rights
+    reserved.
+</footer>
+
+<!-- Control Sidebar -->
+
+
+    </div>
+
+    <script src="/admin/assets/e0f2b065/jquery.js"></script>
+<script src="/admin/assets/6bf5affb/jquery-ui.js"></script>
+<script src="/admin/assets/787b9178/yii.js"></script>
+<script src="/admin/assets/787b9178/yii.gridView.js"></script>
+<script src="/admin/assets/9d5a5e9d/jquery.pjax.js"></script>
+<script src="/admin/js/image-uploader.js"></script>
+<script src="/admin/assets/456fe36c/js/bootstrap.js"></script>
+<script src="/admin/assets/bbf2da1/js/app.min.js"></script>
+<script src="/admin/assets/bbf2da1/js/gmap.js"></script>
+<script src="/admin/assets/bbf2da1/js/jquery.loadingbar.js"></script>
+<script src="/admin/assets/bbf2da1/js/locationpicker.jquery.js"></script>
+<script src="/admin/assets/bbf2da1/js/jquery-ui.js"></script>
+<script src="/admin/assets/bbf2da1/js/jquery-ui.min.js"></script>
+<script src="/admin/assets/bbf2da1/js/select2.min.js"></script>
+<script src="/admin/assets/bbf2da1/js/jquery.ui.nestedSortable.js"></script>
+<script> function callweek(prenext)
+		 {
+		 	//alert(date);
+		 	var currentdate=$('#currentdate').val();
+		    $.ajax({
+		    		
+		    	
+
+					            type: 'post',
+
+					            url: '/admin/sessions/fetchweek',
+
+					            data: {prenext:prenext,currentdate:currentdate},
+
+					            datatype:'json',
+
+					            success: function(responseData) {
+
+                                    
+                                          $('.content').html(responseData);
+
+
+					         }
+
+		      });
+		    
+		    }</script>
+<script>jQuery(function ($) {
+jQuery('#usersearch-created_at').datepicker({"dateFormat":"yy-mm-dd"});
+jQuery('#w0').yiiGridView({"filterUrl":"\/backend\/web\/uploads\/441405_31_2023_13408.pdf","filterSelector":"#w0-filters input, #w0-filters select","filterOnFocusOut":true});
+jQuery(document).pjax("#p0 a", {"push":true,"replace":false,"timeout":1000,"scrollTo":false,"container":"#p0"});
+jQuery(document).off("submit", "#p0 form[data-pjax]").on("submit", "#p0 form[data-pjax]", function (event) {jQuery.pjax.submit(event, {"push":true,"replace":false,"timeout":1000,"scrollTo":false,"container":"#p0"});});
+});</script>    </body>
+    </html>
+    
